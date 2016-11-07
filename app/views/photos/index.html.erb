@@ -4,6 +4,30 @@
     <a href="/photos/new" class="btn btn-lg btn-success">New Photo</a>
   </h1>
 </div>
+<%= search_form_for @q do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  <div class="form-group">
+    <%= f.label :caption_cont, "Caption contains" %>
+    <%= f.text_field :caption_cont, :class => "form-control", :placeholder => "Caption contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :is_editable_true, "Is editable is" %>
+    <%= f.text_field :is_editable_true, :class => "form-control", :placeholder => "Is editable is" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :users_email_cont, "User email contains" %>
+    <%= f.text_field :users_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+  </div>
+
+  <%= f.submit :class => "btn btn-primary btn-block" %>
+
+  <a href="/photos" class="btn btn-default btn-block">Clear filters</a>
+<% end %>
+
+
 
 
 <div class="row m-b-2">

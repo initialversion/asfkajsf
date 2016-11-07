@@ -4,6 +4,27 @@
     <a href="/likes/new" class="btn btn-lg btn-success">New Like</a>
   </h1>
 </div>
+<%= search_form_for @q do |f| %>
+  <p class="lead">Narrow results:</p>
+
+  
+
+  <div class="form-group">
+    <%= f.label :user_email_cont, "User email contains" %>
+    <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :photo_caption_cont, "Photo caption contains" %>
+    <%= f.text_field :photo_caption_cont, :class => "form-control", :placeholder => "Photo caption contains" %>
+  </div>
+
+  <%= f.submit :class => "btn btn-primary btn-block" %>
+
+  <a href="/likes" class="btn btn-default btn-block">Clear filters</a>
+<% end %>
+
+
 
 <div class="row">
   <div class="col-md-12">
